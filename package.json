@@ -1,0 +1,52 @@
+{
+  "name": "use-ens",
+  "version": "1.0.0",
+  "description": "A React hook to fetch ENS records from a domain.",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": ">=12.4"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "build:watch": "node build.js --watch",
+    "dev": "pnpm build:watch & pnpm typegen:watch",
+    "prepare": "pnpm build",
+    "prebuild": "pnpm typegen",
+    "typecheck": "pnpm tsc --noEmit",
+    "typegen": "tsc --emitDeclarationOnly || true",
+    "typegen:watch": "tsc --emitDeclarationOnly --watch"
+  },
+  "keywords": [
+    "ens",
+    "ethereum",
+    "react",
+    "react-hook",
+    "hooks",
+    "blockchain"
+  ],
+  "author": "v1rtl",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "get-ens": "^2.0.3"
+  },
+  "peerDependencies": {
+    "react": ">=17"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talenlessguy/use-ens.git"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.8",
+    "c8": "^7.11.0",
+    "esbuild": "^0.14.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.5.4"
+  }
+}
